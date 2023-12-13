@@ -11,7 +11,7 @@ btnMP.addEventListener('click',function(e){
       .then(response => response.json())
       .then((json)=>{
         console.log(json)
-        let id = json.id;
+        let id = json.id; //id referencia pedido
         let ticketURL = json.point_of_interaction.transaction_data.ticket_url;
         console.log("ID:", id);  // Saída: ID: 1315142150
         console.log("Ticket URL:", ticketURL);
@@ -20,7 +20,7 @@ btnMP.addEventListener('click',function(e){
         console.log(document.getElementById("qr"))
         document.getElementById("qr").innerHTML = `<img src="data:image/jpeg;base64,${QR}" width="170"/>`
         document.getElementById("copy").innerHTML = `<label class="input-group-text" for="copiar">Copiar Hash:</label><input class="form-control" type="text" id="copiar"  value="${COPY}"/>`
-        fetch(`assets/api/temp_data.php?nome=${nome}&sobre=${sobrenome}&email=${email}&cpf=${cpf}&valor=${soma(prince)}&cel=${cel}&qtd=${cotas}&id=${id}`)
+        //fetch(`assets/api/temp_data.php?nome=${nome}&sobre=${sobrenome}&email=${email}&cpf=${cpf}&valor=${soma(prince)}&cel=${cel}&qtd=${cotas}&id=${id}`)
       })
       .catch(err => console.log(err))
 }
